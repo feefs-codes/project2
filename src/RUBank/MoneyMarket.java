@@ -1,9 +1,10 @@
+package RUBank;
+
 /**
  * The MoneyMarket class is an extension of the Savings class
  * and includes the instance variable withdrawal.
+ * @author Fiona Wang
  */
-package RUBank;
-
 public class MoneyMarket extends Savings {
     private int withdrawal;
 
