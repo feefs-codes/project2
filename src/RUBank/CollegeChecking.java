@@ -1,16 +1,45 @@
 package RUBank;
 
-/**
- * College Checking class is an extension of Checking
- * and includes the instance variable campus.
- * A person cannot hold a Checking and a College Checking account at the same time.
- * @author Fiona Wang
- */
-public class CollegeChecking extends Checking {
-    //private Campus campus;
+public class CollegeChecking extends Checking{
+    private Campus campus;
+    private static final double MONTHLY_FEE = 5.0;
+    private static final double INTEREST_RATE = 0.0005;
+
+    // default constructor
+    public CollegeChecking(Profile holder, double balance, Campus campus) {
+        super(holder, balance);
+        this.campus = campus;
+    }
+
+    // constructor to deposit into college checking account
+    public CollegeChecking(Profile holder, double balance) {
+        super(holder, balance);
+    }
+
+    // constructor to close college checking account
+    public CollegeChecking(Profile holder) {
+        super(holder);
+    }
+
+    @Override
+    public String getAccountType() {
+        return "College Checking";
+    }
+
+    @Override
+    public double monthlyInterest() {
+        return balance * INTEREST_RATE;
+    }
 
     @Override
     public double monthlyFee() {
-        return 0.00;
+        return MONTHLY_FEE;
     }
+
+    @Override
+    public String toString() {
+        return getAccountType() + "::" + holder.toString() + "::Balance $" + String.format("%.2f", balance) + "::" + campus;
+    }
+
+
 }

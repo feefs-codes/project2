@@ -1,8 +1,7 @@
 package RUBank;
 
-/**
- * Runs Project2.
- * @author Fiona Wang
- */
 public class RunProject2 {
+    public static void main(String[] args) {
+        new TransactionManager().run();
+    }
 }
