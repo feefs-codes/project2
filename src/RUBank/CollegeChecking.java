@@ -2,7 +2,7 @@ package RUBank;
 
 public class CollegeChecking extends Checking{
     private Campus campus;
-    private static final double MONTHLY_FEE = 5.0;
+    private static final double MONTHLY_FEE = 0.0;
     private static final double INTEREST_RATE = 0.0005;
 
     // default constructor

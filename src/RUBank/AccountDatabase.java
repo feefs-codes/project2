@@ -53,13 +53,10 @@ public class AccountDatabase {
 
     public boolean withdraw(Account account) {
         int index = find(account);
-        if (index == NOT_FOUND) {
-            return false;
-        }
-        if (accounts[index].balance < account.balance) {
-            return false;
-        }
-        accounts[index].balance -= account.balance;
+        if (index == NOT_FOUND) return false;
+        if (accounts[index].balance < account.balance) return false;
+
+        accounts[index].withdrawMoney(account);
         return true;
     }
 
@@ -104,7 +101,20 @@ public class AccountDatabase {
         }
     }
 
-    public void printFeesAndInterests() {}
+    public void printFeesAndInterests() {
+        bubbleSort();
+        for (int i = 0; i < numAcct; i++) {
+            if (accounts[i].monthlyFee() > 0 || accounts[i].monthlyInterest() > 0) {
+                System.out.println(accounts[i].toString() + "::fee " + String.format("%.2f", accounts[i].monthlyFee()) + "::monthly interest" + String.format("%.2f", accounts[i].monthlyInterest()));
+            }
+        }
+    }
 
-    public void printUpdatedBalances() {}
+    public void printUpdatedBalances() {
+        bubbleSort();
+        for (int i = 0; i < numAcct; i++) {
+            accounts[i].balance += accounts[i].monthlyInterest() - accounts[i].monthlyFee();
+            System.out.println(accounts[i].toString());
+        }
+    }
 }
