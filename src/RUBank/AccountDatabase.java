@@ -53,13 +53,10 @@ public class AccountDatabase {
 
     public boolean withdraw(Account account) {
         int index = find(account);
-        if (index == NOT_FOUND) {
-            return false;
-        }
-        if (accounts[index].balance < account.balance) {
-            return false;
-        }
-        accounts[index].balance -= account.balance;
+        if (index == NOT_FOUND) return false;
+        if (accounts[index].balance < account.balance) return false;
+
+        accounts[index].withdrawMoney(account);
         return true;
     }
 
@@ -80,10 +77,11 @@ public class AccountDatabase {
         // display all the accounts in the account database, sorted by the account types
         // For the same account type, sort by the account holder’s profile (last name, first name and dob.)
         bubbleSort();
+        System.out.println("\n*Accounts sorted by account type and profile.");
         for (int i = 0; i < numAcct; i++) {
             System.out.println(accounts[i].toString());
         }
-
+        System.out.println("*end of list.\n");
     }
     private void bubbleSort() {
         int n = numAcct;
@@ -104,7 +102,24 @@ public class AccountDatabase {
         }
     }
 
-    public void printFeesAndInterests() {}
+    public void printFeesAndInterests() {
+        bubbleSort();
+        System.out.println("\n*list of accounts with fee and monthly interest");
+        for (int i = 0; i < numAcct; i++) {
+            if (accounts[i].monthlyFee() > 0 || accounts[i].monthlyInterest() > 0) {
+                System.out.println(accounts[i].toString() + "::fee " + String.format("%.2f", accounts[i].monthlyFee()) + "::monthly interest" + String.format("%.2f", accounts[i].monthlyInterest()));
+            }
+        }
+        System.out.println("*end of list.\n");
+    }
 
-    public void printUpdatedBalances() {}
+    public void printUpdatedBalances() {
+        bubbleSort();
+        System.out.println("\n*list of accounts with fees and interests applied.");
+        for (int i = 0; i < numAcct; i++) {
+            accounts[i].balance += accounts[i].monthlyInterest() - accounts[i].monthlyFee();
+            System.out.println(accounts[i].toString());
+        }
+        System.out.println("*end of list.\n");
+    }
 }

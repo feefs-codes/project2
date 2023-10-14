@@ -23,6 +23,10 @@ public abstract class Account implements Comparable<Account> {
         return holder;
     }
 
+    public void withdrawMoney(Account account) {
+        balance -= account.balance;
+    }
+
     @Override
     public int compareTo(Account account) {
         if (this.getAccountType().compareTo(account.getAccountType()) == 0) {
