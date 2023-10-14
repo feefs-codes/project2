@@ -220,10 +220,6 @@ public class TransactionManager {
             System.out.println("Withdraw amount must be a number!");
             return;
         }
-        if (balance < 2000) {
-            System.out.println("Initial deposit must be minimum $2000!");
-            return;
-        }
         Account account = new MoneyMarket(profile, balance);
         if (database.open(account)) System.out.println(firstName + " " + lastName + " " + dobString + "(MM) opened.");
         else System.out.println(firstName + " " + lastName + " " + dobString + "(MM) is already in the database.");

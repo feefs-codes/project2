@@ -4,6 +4,7 @@ public class CollegeChecking extends Checking{
     private Campus campus;
     private static final double MONTHLY_FEE = 0.0;
     private static final double INTEREST_RATE = 0.0005;
+    private static final double NUM_OF_MONTHS = 12.0;
 
     // default constructor
     public CollegeChecking(Profile holder, double balance, Campus campus) {
@@ -28,7 +29,7 @@ public class CollegeChecking extends Checking{
 
     @Override
     public double monthlyInterest() {
-        return balance * INTEREST_RATE;
+        return (balance * INTEREST_RATE) / NUM_OF_MONTHS;
     }
 
     @Override

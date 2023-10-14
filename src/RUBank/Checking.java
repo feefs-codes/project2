@@ -5,6 +5,7 @@ public class Checking extends Account {
     private static final double INTEREST_RATE = 0.01;
     private static final double MIN_BALANCE = 1000.0;
     private static final double NO_MONTHLY_FEE = 0.0;
+    private static final double NUM_OF_MONTHS = 12.0;
     
     public Checking(Profile holder, double balance) {
         super(holder, balance);
@@ -22,7 +23,7 @@ public class Checking extends Account {
 
     @Override
     public double monthlyInterest() {
-        return balance * INTEREST_RATE;
+        return (balance * INTEREST_RATE) / NUM_OF_MONTHS;
     }
 
     @Override

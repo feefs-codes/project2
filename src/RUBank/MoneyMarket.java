@@ -8,6 +8,7 @@ public class MoneyMarket extends Account {
     private static final double MIN_BALANCE = 2000.0;
     private static final double NO_MONTHLY_FEE = 0.0;
     private static final int MAX_WITHDRAWAL = 3;
+    private static final int NUM_OF_MONTHS = 12;
 
     // default constructor
     public MoneyMarket(Profile holder, double balance) {
@@ -37,8 +38,8 @@ public class MoneyMarket extends Account {
 
     @Override
     public double monthlyInterest() {
-        if (isLoyal()) return balance * LOYALTY_INTEREST_RATE;
-        return balance * INTEREST_RATE;
+        if (isLoyal()) return (balance * LOYALTY_INTEREST_RATE) / NUM_OF_MONTHS;
+        return (balance * INTEREST_RATE) / NUM_OF_MONTHS;
     }
 
     @Override
