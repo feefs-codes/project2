@@ -135,23 +135,4 @@ public class AccountDatabase {
         }
         System.out.println("*end of list.\n");
     }
-
-    public static void main(String[] args) {
-        System.out.println("Opening accounts tests");
-        testOpenDifferentCheckingAccounts();
-    }
-
-    private static void testOpenDifferentCheckingAccounts() {
-        AccountDatabase database = new AccountDatabase();
-        Date dob = new Date(2000, 1, 1);
-        Profile profile = new Profile("Fiona", "Wang", dob);
-        Account collegeChecking = new CollegeChecking(profile, 1000, Campus.NEW_BRUNSWICK);
-        database.open(collegeChecking);
-
-        Account checking = new Checking(profile, 1000);
-        boolean actualOutput = database.open(checking);
-        boolean expectedOutput = false;
-
-        Account.testResult(checking, expectedOutput, actualOutput);
-    }
 }
