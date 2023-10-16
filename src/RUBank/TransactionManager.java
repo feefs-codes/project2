@@ -2,6 +2,11 @@ package RUBank;
 
 import java.util.Scanner;
 
+/**
+ * TransactionManager class creates an AccountDatabase object and processes user input.
+ *
+ * @author Pranay Bhatt, Fiona Wang
+ */
 public class TransactionManager {
     private AccountDatabase database;
     private boolean quit = false;
@@ -19,10 +24,19 @@ public class TransactionManager {
     private static final String MONEY_MARKET = "MM";
     private static final String QUIT = "Q";
 
+    /**
+     * Default constructor: constructs a TransactionManager object with an AccountDatabase object.
+     */
     public TransactionManager() {
         database = new AccountDatabase();
     }
 
+    /**
+     * Parses the date string and returns a Date object.
+     * @param dateString the date string in the format MM/DD/YYYY
+     * @return the Date object
+     * @throws Exception if the date is invalid or a future date.
+     */
     private Date parseDate(String dateString) throws Exception {
         String[] dateStrings = dateString.split("/");
         int month = Integer.parseInt(dateStrings[0]);
@@ -35,6 +49,10 @@ public class TransactionManager {
         return date;
     }
 
+    /**
+     * Processes the open command to direct to open-account-type helper methods.
+     * @param inputParts the input parameters for the open command to pass to helper methods
+     */
     private void processOpenCommand(String[] inputParts) {
         try {
             switch (inputParts[1]) {
@@ -49,6 +67,10 @@ public class TransactionManager {
         }
     }
 
+    /**
+     * Processes the open command for checking accounts.
+     * @param inputParts the input parameters for the open command to create a Checking object
+     */
     private void openCheckingCommand(String[] inputParts) {
         String firstName = inputParts[2];
         //convert firstname into camel case
@@ -93,6 +115,10 @@ public class TransactionManager {
         else System.out.println(firstName + " " + lastName + " " + dateString + "(C) is already in the database.");
     }
 
+    /**
+     * Processes the open command for college checking accounts.
+     * @param inputParts the input parameters for the open command to create a CollegeChecking object
+     */
     private void openCollegeCheckingCommand(String[] inputParts) {
         String firstName = inputParts[2];
         firstName = firstName.substring(0, 1).toUpperCase() + firstName.substring(1).toLowerCase();
@@ -149,6 +175,10 @@ public class TransactionManager {
         else System.out.println(firstName + " " + lastName + " " + dobString + "(CC) is already in the database.");
     }
 
+    /**
+     * Processes the open command for savings accounts.
+     * @param inputParts the input parameters for the open command to create a Savings object
+     */
     private void openSavingsCommand(String[] inputParts) {
         String firstName = inputParts[2];
         firstName = firstName.substring(0, 1).toUpperCase() + firstName.substring(1).toLowerCase();
@@ -187,6 +217,10 @@ public class TransactionManager {
         else System.out.println(firstName + " " + lastName + " " + dobString + "(S) is already in the database."); 
     }
 
+    /**
+     * Processes the open command for money market accounts.
+     * @param inputParts the input parameters for the open command to create a MoneyMarket object
+     */
     private void openMoneyMarketCommand(String[] inputParts) {
         String firstName = inputParts[2];
         firstName = firstName.substring(0, 1).toUpperCase() + firstName.substring(1).toLowerCase();
@@ -229,7 +263,10 @@ public class TransactionManager {
         else System.out.println(firstName + " " + lastName + " " + dobString + "(MM) is already in the database.");
     }
 
-
+    /**
+     * Processes the close command to direct to close-account-type helper methods.
+     * @param inputParts the input parameters for the close command to pass to helper methods
+     */
     private void processCloseCommand(String[] inputParts) {
         try {
             String accountType = inputParts[1];
@@ -266,6 +303,10 @@ public class TransactionManager {
         }
     }
 
+    /**
+     * Processes the deposit command.
+     * @param inputParts the input parameters for the deposit command
+     */
     private void processDepositCommand(String[] inputParts) {
         try {
             String firstName = inputParts[2];
@@ -313,6 +354,10 @@ public class TransactionManager {
         }    
     }
 
+    /**
+     * Processes the withdraw command.
+     * @param inputParts the input parameters for the withdraw command
+     */
     private void processWithdrawCommand(String[] inputParts) {
         try {
             String firstName = inputParts[2];
@@ -362,22 +407,34 @@ public class TransactionManager {
     }
 
 
+    /**
+     * Processes the print command.
+     */
     private void processPrintCommand() {
         if (database.isEmpty()) System.out.println("Database is empty.");
         else database.printSorted();
     }
 
+    /**
+     * Processes the print interest and fees command.
+     */
     private void processPrintInterestFeesCommand() {
         if (database.isEmpty()) System.out.println("Database is empty.");
         else database.printFeesAndInterests();
     }
 
+    /**
+     * Processes the update balance command.
+     */
     private void processUpdateBalanceCommand() {
         if (database.isEmpty()) System.out.println("Database is empty.");
         else database.printUpdatedBalances();
     }
 
 
+    /**
+     * Runs the TransactionManager.
+     */
     public void run() {
         System.out.println("Transaction Manager is running.");
         Scanner scanner = new Scanner(System.in);
