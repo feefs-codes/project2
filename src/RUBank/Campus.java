@@ -3,7 +3,7 @@ package RUBank;
 /**
  * Campus enum class represents a campus as a campus code (0, 1, or 2).
  *
- * @author Pranay Bhatt
+ * @author Pranay Bhatt and Fiona Wang
  */
 public enum Campus {
     NEW_BRUNSWICK(0),

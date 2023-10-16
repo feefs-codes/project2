@@ -3,8 +3,7 @@ package RUBank;
 /**
  * MoneyMarket class inherits from Savings class and represents a money market account with a profile and balance.
  *
- * @author Pranay Bhatt
- * @author Fiona Wang
+ * @author Pranay Bhatt and Fiona Wang
  */
 public class MoneyMarket extends Savings {
     private int withdrawal;
@@ -62,6 +61,13 @@ public class MoneyMarket extends Savings {
     public void withdrawMoney(Account account) {
         balance -= account.balance;
         withdrawal++;
+    }
+
+    /**
+     * Resets the number of withdrawals made in each account to 0.
+     */
+    public void resetWithdrawals() {
+        withdrawal = 0;
     }
 
     /**

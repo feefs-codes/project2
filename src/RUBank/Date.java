@@ -5,7 +5,7 @@ import java.util.Calendar;
 /**
  * Date class represents a calendar date as an object with a year, month, and day.
  *
- * @author Pranay Bhatt, Fiona Wang
+ * @author Pranay Bhatt and Fiona Wang
  */
 public class Date implements Comparable<Date> {
     private int year;

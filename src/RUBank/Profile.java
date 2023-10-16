@@ -3,7 +3,7 @@ package RUBank;
 /**
  * Profile class represents a holder's profile as an object with a first name, last name, and date of birth.
  *
- * @author Pranay Bhatt, Fiona Wang
+ * @author Pranay Bhatt and Fiona Wang
  */
 public class Profile implements Comparable<Profile> {
     private String fname;

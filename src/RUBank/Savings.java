@@ -4,7 +4,7 @@ package RUBank;
  * Savings class inherits from Account class and represents a saving account
  * with a profile, balance, and loyalty status.
  *
- * @author Pranay Bhatt
+ * @author Pranay Bhatt and Fiona Wang
  */
 public class Savings extends Account {
     protected boolean isLoyal;
@@ -86,4 +86,5 @@ public class Savings extends Account {
         if(isLoyal) return getAccountType() + "::" + holder.toString() + "::Balance $" + String.format("%.2f", balance) + "::is loyal";
         return getAccountType() + "::" + holder.toString() + "::Balance $" + String.format("%.2f", balance);
     }
+
 }

@@ -3,7 +3,7 @@ package RUBank;
 /**
  * RunProject2 class runs the TransactionManager program.
  *
- * @author Pranay Bhatt, Fiona Wang
+ * @author Pranay Bhatt and Fiona Wang
  */
 public class RunProject2 {
     /**
