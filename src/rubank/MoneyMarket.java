@@ -1,4 +1,4 @@
-package RUBank;
+package rubank;
 
 /**
  * MoneyMarket class inherits from Savings class and represents a money market account with a profile and balance.

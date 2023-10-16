@@ -1,4 +1,4 @@
-package RUBank;
+package rubank;
 
 /**
  * CollegeChecking class inherits from Checking class and represents a college checking account

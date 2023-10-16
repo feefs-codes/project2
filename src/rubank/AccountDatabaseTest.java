@@ -1,4 +1,4 @@
-package RUBank;
+package rubank;
 
 import org.junit.Test;
 

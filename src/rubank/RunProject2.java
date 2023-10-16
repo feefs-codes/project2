@@ -1,4 +1,4 @@
-package RUBank;
+package rubank;
 
 /**
  * RunProject2 class runs the TransactionManager program.

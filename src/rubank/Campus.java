@@ -1,4 +1,4 @@
-package RUBank;
+package rubank;
 
 /**
  * Campus enum class represents a campus as a campus code (0, 1, or 2).

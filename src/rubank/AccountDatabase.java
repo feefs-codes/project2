@@ -1,4 +1,4 @@
-package RUBank;
+package rubank;
 
 /**
  * AccountDatabase class stores Account objects in an array,

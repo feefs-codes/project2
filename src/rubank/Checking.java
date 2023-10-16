@@ -1,4 +1,4 @@
-package RUBank;
+package rubank;
 
 /**
  * Checking class inherits from Account class and represents a checking account with a profile and balance.

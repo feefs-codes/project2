@@ -6,7 +6,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <meta name="dc.created" content="2023-10-16">
-<meta name="description" content="declaration: package: RUBank, class: MoneyMarket">
+<meta name="description" content="declaration: package: rubank, class: MoneyMarket">
 <meta name="generator" content="javadoc/ClassWriterImpl">
 <link rel="stylesheet" type="text/css" href="../stylesheet.css" title="Style">
 <link rel="stylesheet" type="text/css" href="../script-dir/jquery-ui.min.css" title="Style">
@@ -81,24 +81,24 @@ loadScripts(document, 'script');</script>
 <main role="main">
 <!-- ======== START OF CLASS DATA ======== -->
 <div class="header">
-<div class="sub-title"><span class="package-label-in-type">Package</span>&nbsp;<a href="package-summary.html">RUBank</a></div>
+<div class="sub-title"><span class="package-label-in-type">Package</span>&nbsp;<a href="package-summary.html">rubank</a></div>
 <h1 title="Class MoneyMarket" class="title">Class MoneyMarket</h1>
 </div>
 <div class="inheritance" title="Inheritance Tree"><a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">java.lang.Object</a>
-<div class="inheritance"><a href="Account.html" title="class in RUBank">RUBank.Account</a>
-<div class="inheritance"><a href="Savings.html" title="class in RUBank">RUBank.Savings</a>
-<div class="inheritance">RUBank.MoneyMarket</div>
+<div class="inheritance"><a href="Account.html" title="class in rubank">rubank.Account</a>
+<div class="inheritance"><a href="Savings.html" title="class in rubank">rubank.Savings</a>
+<div class="inheritance">rubank.MoneyMarket</div>
 </div>
 </div>
 </div>
 <section class="class-description" id="class-description">
 <dl class="notes">
 <dt>All Implemented Interfaces:</dt>
-<dd><code><a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Comparable.html" title="class or interface in java.lang" class="external-link">Comparable</a>&lt;<a href="Account.html" title="class in RUBank">Account</a>&gt;</code></dd>
+<dd><code><a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Comparable.html" title="class or interface in java.lang" class="external-link">Comparable</a>&lt;<a href="Account.html" title="class in rubank">Account</a>&gt;</code></dd>
 </dl>
 <hr>
 <div class="type-signature"><span class="modifiers">public class </span><span class="element-name type-name-label">MoneyMarket</span>
-<span class="extends-implements">extends <a href="Savings.html" title="class in RUBank">Savings</a></span></div>
+<span class="extends-implements">extends <a href="Savings.html" title="class in rubank">Savings</a></span></div>
 <div class="block">MoneyMarket class inherits from Savings class and represents a money market account with a profile and balance.</div>
 </section>
 <section class="summary">
@@ -108,10 +108,10 @@ loadScripts(document, 'script');</script>
 <section class="field-summary" id="field-summary">
 <h2>Field Summary</h2>
 <div class="inherited-list">
-<h3 id="fields-inherited-from-class-RUBank.Savings">Fields inherited from class&nbsp;RUBank.<a href="Savings.html" title="class in RUBank">Savings</a></h3>
+<h3 id="fields-inherited-from-class-RUBank.Savings">Fields inherited from class&nbsp;rubank.<a href="Savings.html" title="class in rubank">Savings</a></h3>
 <code><a href="Savings.html#isLoyal">isLoyal</a></code></div>
 <div class="inherited-list">
-<h3 id="fields-inherited-from-class-RUBank.Account">Fields inherited from class&nbsp;RUBank.<a href="Account.html" title="class in RUBank">Account</a></h3>
+<h3 id="fields-inherited-from-class-RUBank.Account">Fields inherited from class&nbsp;rubank.<a href="Account.html" title="class in rubank">Account</a></h3>
 <code><a href="Account.html#balance">balance</a>, <a href="Account.html#holder">holder</a></code></div>
 </section>
 </li>
@@ -123,12 +123,12 @@ loadScripts(document, 'script');</script>
 <div class="summary-table two-column-summary">
 <div class="table-header col-first">Constructor</div>
 <div class="table-header col-last">Description</div>
-<div class="col-constructor-name even-row-color"><code><a href="#%3Cinit%3E(RUBank.Profile)" class="member-name-link">MoneyMarket</a><wbr>(<a href="Profile.html" title="class in RUBank">Profile</a>&nbsp;holder)</code></div>
+<div class="col-constructor-name even-row-color"><code><a href="#%3Cinit%3E(RUBank.Profile)" class="member-name-link">MoneyMarket</a><wbr>(<a href="Profile.html" title="class in rubank">Profile</a>&nbsp;holder)</code></div>
 <div class="col-last even-row-color">
 <div class="block">Constructor used when closing a money market account;
  constructs a MoneyMarket object with the given profile.</div>
 </div>
-<div class="col-constructor-name odd-row-color"><code><a href="#%3Cinit%3E(RUBank.Profile,double)" class="member-name-link">MoneyMarket</a><wbr>(<a href="Profile.html" title="class in RUBank">Profile</a>&nbsp;holder,
+<div class="col-constructor-name odd-row-color"><code><a href="#%3Cinit%3E(RUBank.Profile,double)" class="member-name-link">MoneyMarket</a><wbr>(<a href="Profile.html" title="class in rubank">Profile</a>&nbsp;holder,
  double&nbsp;balance)</code></div>
 <div class="col-last odd-row-color">
 <div class="block">Default MoneyMarket constructor;
@@ -174,7 +174,7 @@ loadScripts(document, 'script');</script>
 <div class="block">Returns a string representation of money market account.</div>
 </div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#withdrawMoney(RUBank.Account)" class="member-name-link">withdrawMoney</a><wbr>(<a href="Account.html" title="class in RUBank">Account</a>&nbsp;account)</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#withdrawMoney(RUBank.Account)" class="member-name-link">withdrawMoney</a><wbr>(<a href="Account.html" title="class in rubank">Account</a>&nbsp;account)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Subtracts withdrawal from balance and keeps track of total withdrawals made in each account.</div>
 </div>
@@ -182,7 +182,7 @@ loadScripts(document, 'script');</script>
 </div>
 </div>
 <div class="inherited-list">
-<h3 id="methods-inherited-from-class-RUBank.Account">Methods inherited from class&nbsp;RUBank.<a href="Account.html" title="class in RUBank">Account</a></h3>
+<h3 id="methods-inherited-from-class-RUBank.Account">Methods inherited from class&nbsp;rubank.<a href="Account.html" title="class in rubank">Account</a></h3>
 <code><a href="Account.html#compareTo(RUBank.Account)">compareTo</a>, <a href="Account.html#getHolder()">getHolder</a></code></div>
 <div class="inherited-list">
 <h3 id="methods-inherited-from-class-java.lang.Object">Methods inherited from class&nbsp;java.lang.<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a></h3>
@@ -201,7 +201,7 @@ loadScripts(document, 'script');</script>
 <li>
 <section class="detail" id="&lt;init&gt;(RUBank.Profile,double)">
 <h3>MoneyMarket</h3>
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="element-name">MoneyMarket</span><wbr><span class="parameters">(<a href="Profile.html" title="class in RUBank">Profile</a>&nbsp;holder,
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="element-name">MoneyMarket</span><wbr><span class="parameters">(<a href="Profile.html" title="class in rubank">Profile</a>&nbsp;holder,
  double&nbsp;balance)</span></div>
 <div class="block">Default MoneyMarket constructor;
  constructs a MoneyMarket object with the given profile and balance.</div>
@@ -215,7 +215,7 @@ loadScripts(document, 'script');</script>
 <li>
 <section class="detail" id="&lt;init&gt;(RUBank.Profile)">
 <h3>MoneyMarket</h3>
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="element-name">MoneyMarket</span><wbr><span class="parameters">(<a href="Profile.html" title="class in RUBank">Profile</a>&nbsp;holder)</span></div>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="element-name">MoneyMarket</span><wbr><span class="parameters">(<a href="Profile.html" title="class in rubank">Profile</a>&nbsp;holder)</span></div>
 <div class="block">Constructor used when closing a money market account;
  constructs a MoneyMarket object with the given profile.</div>
 <dl class="notes">
@@ -250,7 +250,7 @@ loadScripts(document, 'script');</script>
 <div class="block">Returns the account type, money market.</div>
 <dl class="notes">
 <dt>Overrides:</dt>
-<dd><code><a href="Savings.html#getAccountType()">getAccountType</a></code>&nbsp;in class&nbsp;<code><a href="Savings.html" title="class in RUBank">Savings</a></code></dd>
+<dd><code><a href="Savings.html#getAccountType()">getAccountType</a></code>&nbsp;in class&nbsp;<code><a href="Savings.html" title="class in rubank">Savings</a></code></dd>
 <dt>Returns:</dt>
 <dd>the string "Money Market"</dd>
 </dl>
@@ -259,12 +259,12 @@ loadScripts(document, 'script');</script>
 <li>
 <section class="detail" id="withdrawMoney(RUBank.Account)">
 <h3>withdrawMoney</h3>
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">withdrawMoney</span><wbr><span class="parameters">(<a href="Account.html" title="class in RUBank">Account</a>&nbsp;account)</span></div>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">withdrawMoney</span><wbr><span class="parameters">(<a href="Account.html" title="class in rubank">Account</a>&nbsp;account)</span></div>
 <div class="block">Subtracts withdrawal from balance and keeps track of total withdrawals made in each account.
  ($10 fee applies if the number of withdrawals &gt;3 times)</div>
 <dl class="notes">
 <dt>Overrides:</dt>
-<dd><code><a href="Account.html#withdrawMoney(RUBank.Account)">withdrawMoney</a></code>&nbsp;in class&nbsp;<code><a href="Account.html" title="class in RUBank">Account</a></code></dd>
+<dd><code><a href="Account.html#withdrawMoney(RUBank.Account)">withdrawMoney</a></code>&nbsp;in class&nbsp;<code><a href="Account.html" title="class in rubank">Account</a></code></dd>
 <dt>Parameters:</dt>
 <dd><code>account</code> - the account</dd>
 </dl>
@@ -278,7 +278,7 @@ loadScripts(document, 'script');</script>
  (Money Market with loyal customer status get 4.75% annual interest rate)</div>
 <dl class="notes">
 <dt>Overrides:</dt>
-<dd><code><a href="Savings.html#monthlyInterest()">monthlyInterest</a></code>&nbsp;in class&nbsp;<code><a href="Savings.html" title="class in RUBank">Savings</a></code></dd>
+<dd><code><a href="Savings.html#monthlyInterest()">monthlyInterest</a></code>&nbsp;in class&nbsp;<code><a href="Savings.html" title="class in rubank">Savings</a></code></dd>
 <dt>Returns:</dt>
 <dd>monthly interest</dd>
 </dl>
@@ -292,7 +292,7 @@ loadScripts(document, 'script');</script>
  (No monthly fee if account balance &gt;= $2000)</div>
 <dl class="notes">
 <dt>Overrides:</dt>
-<dd><code><a href="Savings.html#monthlyFee()">monthlyFee</a></code>&nbsp;in class&nbsp;<code><a href="Savings.html" title="class in RUBank">Savings</a></code></dd>
+<dd><code><a href="Savings.html#monthlyFee()">monthlyFee</a></code>&nbsp;in class&nbsp;<code><a href="Savings.html" title="class in rubank">Savings</a></code></dd>
 <dt>Returns:</dt>
 <dd>monthly fee</dd>
 </dl>
@@ -305,7 +305,7 @@ loadScripts(document, 'script');</script>
 <div class="block">Returns a string representation of money market account.</div>
 <dl class="notes">
 <dt>Overrides:</dt>
-<dd><code><a href="Savings.html#toString()">toString</a></code>&nbsp;in class&nbsp;<code><a href="Savings.html" title="class in RUBank">Savings</a></code></dd>
+<dd><code><a href="Savings.html#toString()">toString</a></code>&nbsp;in class&nbsp;<code><a href="Savings.html" title="class in rubank">Savings</a></code></dd>
 <dt>Returns:</dt>
 <dd>a string representation of money market account</dd>
 </dl>

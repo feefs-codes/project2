@@ -1,4 +1,4 @@
-package RUBank;
+package rubank;
 
 /**
  * Profile class represents a holder's profile as an object with a first name, last name, and date of birth.

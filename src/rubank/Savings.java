@@ -1,4 +1,4 @@
-package RUBank;
+package rubank;
 
 /**
  * Savings class inherits from Account class and represents a saving account

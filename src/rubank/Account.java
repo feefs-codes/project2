@@ -1,4 +1,4 @@
-package RUBank;
+package rubank;
 
 /**
  * Account class represents an account as an object with a profile and balance,

@@ -1,4 +1,4 @@
-package RUBank;
+package rubank;
 
 import static org.junit.Assert.*;
 
