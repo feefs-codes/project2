@@ -64,6 +64,13 @@ public class MoneyMarket extends Savings {
     }
 
     /**
+     * Resets the number of withdrawals made in each account to 0.
+     */
+    public void resetWithdrawals() {
+        withdrawal = 0;
+    }
+
+    /**
      * Calculates and returns the monthly interest.
      * (Money Market with loyal customer status get 4.75% annual interest rate)
      * @return monthly interest

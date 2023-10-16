@@ -86,4 +86,5 @@ public class Savings extends Account {
         if(isLoyal) return getAccountType() + "::" + holder.toString() + "::Balance $" + String.format("%.2f", balance) + "::is loyal";
         return getAccountType() + "::" + holder.toString() + "::Balance $" + String.format("%.2f", balance);
     }
+
 }

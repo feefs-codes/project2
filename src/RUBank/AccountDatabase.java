@@ -193,6 +193,10 @@ public class AccountDatabase {
         System.out.println("\n*list of accounts with fees and interests applied.");
         for (int i = 0; i < numAcct; i++) {
             accounts[i].balance += accounts[i].monthlyInterest() - accounts[i].monthlyFee();
+            if (accounts[i].getAccountType().equals("Money Market")) {
+                MoneyMarket moneyMarket = (MoneyMarket) accounts[i];
+                moneyMarket.resetWithdrawals();
+            }
             System.out.println(accounts[i].toString());
         }
         System.out.println("*end of list.\n");
