@@ -3,7 +3,7 @@ package RUBank;
 /**
  * Checking class inherits from Account class and represents a checking account with a profile and balance.
  *
- * @author Pranay Bhatt
+ * @author Pranay Bhatt and Fiona Wang
  */
 public class Checking extends Account {
     private static final double MONTHLY_FEE = 12.0;

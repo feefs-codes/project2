@@ -4,8 +4,7 @@ package RUBank;
  * AccountDatabase class stores Account objects in an array,
  * and provides methods to open, close, withdraw/deposit from/to an account, and sort then print accounts.
  *
- * @author Pranay Bhatt
- * @author Fiona Wang
+ * @author Pranay Bhatt and Fiona Wang
  */
 public class AccountDatabase {
     private Account[] accounts;

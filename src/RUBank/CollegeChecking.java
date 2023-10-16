@@ -4,8 +4,7 @@ package RUBank;
  * CollegeChecking class inherits from Checking class and represents a college checking account
  * with a profile, balance, and campus.
  *
- * @author Pranay Bhatt
- * @author Fiona Wang
+ * @author Pranay Bhatt and Fiona Wang
  */
 public class CollegeChecking extends Checking {
     private Campus campus;

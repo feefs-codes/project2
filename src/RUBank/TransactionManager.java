@@ -5,7 +5,7 @@ import java.util.Scanner;
 /**
  * TransactionManager class creates an AccountDatabase object and processes user input.
  *
- * @author Pranay Bhatt, Fiona Wang
+ * @author Pranay Bhatt and Fiona Wang
  */
 public class TransactionManager {
     private AccountDatabase database;
