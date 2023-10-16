@@ -1,15 +1,31 @@
 package RUBank;
 
+/**
+ * AccountDatabase class stores Account objects in an array,
+ * and provides methods to open, close, withdraw/deposit from/to an account, and sort then print accounts.
+ *
+ * @author Pranay Bhatt
+ * @author Fiona Wang
+ */
 public class AccountDatabase {
     private Account[] accounts;
     private int numAcct;
     private static final int NOT_FOUND = -1;
     private static final int ARRAY_GROWTH_FACTOR = 4;
 
+    /**
+     * Default constructor: constructs an AccountDatabase object with an array of size 4.
+     */
     public AccountDatabase() {
         this.accounts = new Account[4];
         this.numAcct = 0;
     }
+
+    /**
+     * Finds the index of the given account in the array.
+     * @param account the account to find
+     * @return the index of the account in the array, or NOT_FOUND if not found
+     */
     private int find(Account account) {
         for (int i = 0; i < numAcct; i++) {
             if (accounts[i].getAccountType().equals(account.getAccountType()) && accounts[i].getHolder().equals(account.getHolder())) {
@@ -18,6 +34,10 @@ public class AccountDatabase {
         }
         return NOT_FOUND;
     }
+
+    /**
+     * Grows the array by adding four spots.
+     */
     private void grow() {
         Account[] newAccounts = new Account[accounts.length + ARRAY_GROWTH_FACTOR];
         for (int i = 0; i < accounts.length; i++) {
@@ -26,10 +46,21 @@ public class AccountDatabase {
         accounts = newAccounts;
     }
 
+    /**
+     * Checks if the given account is in the array.
+     * @param account the account to check
+     * @return true if the account is in the array, false otherwise.
+     */
     public boolean contains(Account account) {
         return find(account) != NOT_FOUND;
     }
 
+    /**
+     * Opens the given account and adds it to the array.
+     * @param account the account to add
+     * @return true if the account was opened, false if the account already exists in the array,
+     * or if someone opens both a checking and college checking account
+     */
     public boolean open(Account account) {
         if (contains(account)) {
             return false;
@@ -53,6 +84,11 @@ public class AccountDatabase {
         return true;
     }
 
+    /**
+     * Closes the given account and removes it from the array.
+     * @param account the account to close
+     * @return true if the account was closed, false if the account was not in the array
+     */
     public boolean close(Account account) {
         int index = find(account);
         if (index == NOT_FOUND) {
@@ -63,6 +99,12 @@ public class AccountDatabase {
         return true;
     }
 
+    /**
+     * Withdraws money from the account.
+     * @param account the account to withdraw from
+     * @return true if the withdrawal was valid, false if the account was not in the array
+     * or if the withdrawal is greater than the account balance
+     */
     public boolean withdraw(Account account) {
         int index = find(account);
         if (index == NOT_FOUND) return false;
@@ -72,6 +114,11 @@ public class AccountDatabase {
         return true;
     }
 
+    /**
+     * Deposits money to the account.
+     * @param account the account to deposit to
+     * @return true if the deposit was valid, false if the account was not in the array
+     */
     public boolean deposit(Account account) {
         int index = find(account);
         if (index == NOT_FOUND) {
@@ -81,13 +128,19 @@ public class AccountDatabase {
         return true;
     }
 
+    /**
+     * Checks if the array is empty.
+     * @return true if there are no accounts in the array, false otherwise.
+     */
     public boolean isEmpty() {
         return numAcct == 0;
     }
 
+    /**
+     * Prints all accounts in the database,
+     * sorted by the account types then account holder's profiles (last name, first name, dob).
+     */
     public void printSorted() {
-        // display all the accounts in the account database, sorted by the account types
-        // For the same account type, sort by the account holder’s profile (last name, first name and dob.)
         bubbleSort();
         System.out.println("\n*Accounts sorted by account type and profile.");
         for (int i = 0; i < numAcct; i++) {
@@ -95,6 +148,10 @@ public class AccountDatabase {
         }
         System.out.println("*end of list.\n");
     }
+
+    /**
+     * Helper method for printSorted() that sorts the array by account type and profile using bubbleSort.
+     */
     private void bubbleSort() {
         int n = numAcct;
         boolean swapped;
@@ -114,6 +171,9 @@ public class AccountDatabase {
         }
     }
 
+    /**
+     * Prints monthly interests and fees that were calculated within each account type class.
+     */
     public void printFeesAndInterests() {
         bubbleSort();
         System.out.println("\n*list of accounts with fee and monthly interest");
@@ -126,6 +186,9 @@ public class AccountDatabase {
         System.out.println("*end of list.\n");
     }
 
+    /**
+     * Prints the updated balances after applying interests and fees.
+     */
     public void printUpdatedBalances() {
         bubbleSort();
         System.out.println("\n*list of accounts with fees and interests applied.");

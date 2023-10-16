@@ -3,6 +3,9 @@ package RUBank;
 /**
  * Account class represents an account as an object with a profile and balance,
  * and is the general type of the other account types.
+ *
+ * @author Pranay Bhatt
+ * @author Fiona Wang
  */
 
 public abstract class Account implements Comparable<Account> {
