@@ -34,7 +34,6 @@ public abstract class Account implements Comparable<Account> {
 
     /**
      * The following functions are polymorphic within Account-inherited class objects.
-     * @return
      */
     public abstract double monthlyInterest();
     public abstract double monthlyFee();
