@@ -45,7 +45,7 @@ public class TransactionManager {
 
         Date date = new Date(year, month, day);
         if(!date.isValid()) throw new Exception("DOB invalid: " + dateString + " not a valid calendar date!");
-        if(date.isFutureDate()) throw new Exception("DOB invalid: " + dateString + " cannot be today or a future date!");
+        if(date.isFutureDate()) throw new Exception("DOB invalid: " + dateString + " cannot be today or a future day.");
         return date;
     }
 
@@ -255,7 +255,7 @@ public class TransactionManager {
             }
         }
         catch (NumberFormatException e) {
-            System.out.println("Withdraw amount must be a number!");
+            System.out.println("Not a valid amount.");
             return;
         }
         Account account = new MoneyMarket(profile, balance);
@@ -347,7 +347,7 @@ public class TransactionManager {
                     return;
                 }
             }
-            if (database.deposit(account)) System.out.println(String.format(firstName + " " + lastName + " " + dobString + "(" + accountType + ") Deposit - balance +%.2f.", amount));
+            if (database.deposit(account)) System.out.println(firstName + " " + lastName + " " + dobString + "(" + accountType + ") Deposit - balance updated.");
             else System.out.println(firstName + " " + lastName + " " + dobString + "(" + accountType + ") is not in the database.");
         } catch (ArrayIndexOutOfBoundsException e) {
             System.out.println("Missing data for depositing into an account.");
@@ -382,7 +382,7 @@ public class TransactionManager {
                 }
             }
             catch (NumberFormatException e) {
-                System.out.println("Withdraw amount must be a number!");
+                System.out.println("Not a valid amount.");
                 return;
             }
             
@@ -398,7 +398,7 @@ public class TransactionManager {
                     return;
                 }
             }
-            if (database.withdraw(account)) System.out.println(String.format(firstName + " " + lastName + " " + dobString + "(" + accountType + ") Withdraw - balance -%.2f.", amount));
+            if (database.withdraw(account)) { System.out.println(firstName + " " + lastName + " " + dobString + "(" + accountType + ") Withdraw - balance updated.");}
             else if (account.balance < amount) System.out.println(firstName + " " + lastName + " " + dobString + "(" + accountType + ") Withdraw - insufficient fund.");
             else System.out.println(firstName + " " + lastName + " " + dobString + "(" + accountType + ") is not in the database.");
         } catch (ArrayIndexOutOfBoundsException e) {
@@ -411,7 +411,7 @@ public class TransactionManager {
      * Processes the print command.
      */
     private void processPrintCommand() {
-        if (database.isEmpty()) System.out.println("Database is empty.");
+        if (database.isEmpty()) System.out.println("Account Database is empty!");
         else database.printSorted();
     }
 
@@ -419,7 +419,7 @@ public class TransactionManager {
      * Processes the print interest and fees command.
      */
     private void processPrintInterestFeesCommand() {
-        if (database.isEmpty()) System.out.println("Database is empty.");
+        if (database.isEmpty()) System.out.println("Account Database is empty!");
         else database.printFeesAndInterests();
     }
 
@@ -427,7 +427,7 @@ public class TransactionManager {
      * Processes the update balance command.
      */
     private void processUpdateBalanceCommand() {
-        if (database.isEmpty()) System.out.println("Database is empty.");
+        if (database.isEmpty()) System.out.println("Account Database is empty!");
         else database.printUpdatedBalances();
     }
 

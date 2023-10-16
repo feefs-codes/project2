@@ -107,7 +107,11 @@ public class AccountDatabase {
     public boolean withdraw(Account account) {
         int index = find(account);
         if (index == NOT_FOUND) return false;
-        if (accounts[index].balance < account.balance) return false;
+        if (accounts[index].balance < account.balance)
+        {
+            account.balance = accounts[index].balance;
+            return false;
+        }
 
         accounts[index].withdrawMoney(account);
         return true;
