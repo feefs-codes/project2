@@ -15,7 +15,10 @@ public class AccountDatabaseTest {
     Account pAccount = new Checking(pranay, 1000);
 
 
-    // true case
+    /**
+     * JUnit test true case
+     * Asserts true when fAccount closes after being opened.
+     */
     @Test
     public void testValidClose() {
         AccountDatabase database = new AccountDatabase();
@@ -24,7 +27,11 @@ public class AccountDatabaseTest {
         assertTrue(database.close(fAccount));
     }
 
-    // false case
+    /**
+     * JUnit test false case
+     * Asserts false when closing checking account pAccount after
+     * opening a college checking account with the same profile.
+     */
     @Test
     public void testInvalidClose() {
         AccountDatabase database = new AccountDatabase();
