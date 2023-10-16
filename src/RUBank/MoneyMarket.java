@@ -44,15 +44,20 @@ public class MoneyMarket extends Account {
 
     @Override
     public double monthlyFee() {
-        if (withdrawal > MAX_WITHDRAWAL) {
-            return MONTHLY_FEE;
+        if (balance >= 2000) {
+            if (withdrawal < MAX_WITHDRAWAL)
+                return NO_MONTHLY_FEE;
+            else return 10.0;
         }
-        return NO_MONTHLY_FEE;
+        else
+            if (withdrawal < MAX_WITHDRAWAL)
+                return MONTHLY_FEE;
+            return MONTHLY_FEE + 10.0;
     }
 
     @Override
     public String toString() {
-        if (isLoyal()) return "Money Market::Savings::" + holder.toString() + "::Balance $" + String.format("%.2f", balance) + "::is loyal::withdrawal : " + withdrawal;
-        return "Money Market::Savings::" + holder.toString() + "::Balance $" + String.format("%.2f", balance) + "::withdrawal : " + withdrawal;
+        if (isLoyal()) return "Money Market::Savings::" + holder.toString() + "::Balance $" + String.format("%.2f", balance) + "::is loyal::withdrawal: " + withdrawal;
+        return "Money Market::Savings::" + holder.toString() + "::Balance $" + String.format("%.2f", balance) + "::withdrawal: " + withdrawal;
     }
 }

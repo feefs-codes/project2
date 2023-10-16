@@ -354,6 +354,7 @@ public class TransactionManager {
                 }
             }
             if (database.withdraw(account)) System.out.println(String.format(firstName + " " + lastName + " " + dobString + "(" + accountType + ") Withdraw - balance -%.2f.", amount));
+            else if (account.balance < amount) System.out.println(firstName + " " + lastName + " " + dobString + "(" + accountType + ") Withdraw - insufficient fund.");
             else System.out.println(firstName + " " + lastName + " " + dobString + "(" + accountType + ") is not in the database.");
         } catch (ArrayIndexOutOfBoundsException e) {
             System.out.println("Missing data for withdrawing from an account.");
