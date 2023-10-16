@@ -30,8 +30,8 @@ public class TransactionManager {
         int year = Integer.parseInt(dateStrings[2]);
 
         Date date = new Date(year, month, day);
-        if(!date.isValid()) throw new Exception(dateString + ": Invalid Calendar Date!");
-        if(date.isFutureDate()) throw new Exception(dateString + ": Date can't be a future date!");
+        if(!date.isValid()) throw new Exception("DOB invalid: " + dateString + " not a valid calendar date!");
+        if(date.isFutureDate()) throw new Exception("DOB invalid: " + dateString + " cannot be today or a future date!");
         return date;
     }
 
@@ -67,7 +67,7 @@ public class TransactionManager {
             return;
         }
         if (!dob.isOver16()) {
-            System.out.println("DOB Invalid: " + dateString + " under 16");
+            System.out.println("DOB Invalid: " + dateString + " under 16.");
             return;
         }
 
@@ -109,11 +109,11 @@ public class TransactionManager {
             return;
         }
         if (!dob.isOver16()) {
-            System.out.println("DOB Invalid: " + dobString + " under 16");
+            System.out.println("DOB Invalid: " + dobString + " under 16.");
             return;
         }
         if (!dob.isUnder24()) {
-            System.out.println("DOB Invalid: " + dobString + " over 24");
+            System.out.println("DOB Invalid: " + dobString + " over 24.");
             return;
         }
 
@@ -163,7 +163,7 @@ public class TransactionManager {
             return;
         }
         if (!dob.isOver16()) {
-            System.out.println("DOB Invalid: " + dobString + " under 16");
+            System.out.println("DOB Invalid: " + dobString + " under 16.");
             return;
         }
 
@@ -172,12 +172,12 @@ public class TransactionManager {
         try {
             balance = Double.parseDouble(inputParts[5]);
             if (balance <= 0) {
-                System.out.println("Withdraw amount must be greater than 0!");
+                System.out.println("Withdraw - amount cannot be 0 or negative.");
                 return;
             }
         }
         catch (NumberFormatException e) {
-            System.out.println("Withdraw amount must be a number!");
+            System.out.println("Not a valid amount.");
             return;
         }
         int loyalty = Integer.parseInt(inputParts[6]);
@@ -203,7 +203,7 @@ public class TransactionManager {
             return;
         }
         if (!dob.isOver16()) {
-            System.out.println("DOB Invalid: " + dobString + " under 16");
+            System.out.println("DOB Invalid: " + dobString + " under 16.");
             return;
         }
 
@@ -211,8 +211,11 @@ public class TransactionManager {
         double balance;
         try {
             balance = Double.parseDouble(inputParts[5]);
-            if (balance < 2000) {
-                System.out.println("Initial deposit must be minimum $2000!");
+            if (balance <= 0) {
+                System.out.println("Initial deposit cannot be 0 or negative.");
+            }
+            else if (balance < 2000) {
+                System.out.println("Minimum of $2000 to open a Money Market account.");
                 return;
             }
         }
@@ -255,8 +258,8 @@ public class TransactionManager {
                     return;
                 }
             }
-            if (database.close(account)) System.out.println("Account closed and removed from the database.");
-            else System.out.println("Account does not exist.");
+            if (database.close(account)) System.out.println(firstName + " " + lastName + " " + dobString + "(" + accountType + ") has been closed.");
+            else System.out.println(firstName + " " + lastName + " " + dobString + "(" + accountType + ") is not in the database.");
         } catch (ArrayIndexOutOfBoundsException e) {
             System.out.println("Missing data for closing an account.");
         }
@@ -281,12 +284,12 @@ public class TransactionManager {
             try {
                 amount = Double.parseDouble(inputParts[5]);
                 if (amount <= 0) {
-                    System.out.println("Deposit amount must be greater than 0!");
+                    System.out.println("Deposit - amount cannot be 0 or negative.");
                     return;
                 }
             }
             catch (NumberFormatException e) {
-                System.out.println("Deposit amount must be a number!");
+                System.out.println("Not a valid amount.");
                 return;
             }
             
@@ -302,8 +305,8 @@ public class TransactionManager {
                     return;
                 }
             }
-            if (database.deposit(account)) System.out.println(String.format("%.2f deposited to account.", amount)); 
-            else System.out.println("Account does not exist."); 
+            if (database.deposit(account)) System.out.println(String.format(firstName + " " + lastName + " " + dobString + "(" + accountType + ") Deposit - balance +%.2f.", amount));
+            else System.out.println(firstName + " " + lastName + " " + dobString + "(" + accountType + ") is not in the database.");
         } catch (ArrayIndexOutOfBoundsException e) {
             System.out.println("Missing data for depositing into an account.");
         }    
@@ -350,8 +353,8 @@ public class TransactionManager {
                 }
             }
 
-            if (database.withdraw(account)) System.out.println(String.format("%.2f withdrawn from account.", amount));
-            else System.out.println("Account does not exist.");
+            if (database.withdraw(account)) System.out.println(String.format(firstName + " " + lastName + " " + dobString + "(" + accountType + ") Withdraw - balance -%.2f.", amount));
+            else System.out.println(firstName + " " + lastName + " " + dobString + "(" + accountType + ") is not in the database.");
         } catch (ArrayIndexOutOfBoundsException e) {
             System.out.println("Missing data for withdrawing from an account.");
         }

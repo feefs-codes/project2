@@ -107,7 +107,8 @@ public class AccountDatabase {
         System.out.println("\n*list of accounts with fee and monthly interest");
         for (int i = 0; i < numAcct; i++) {
             if (accounts[i].monthlyFee() > 0 || accounts[i].monthlyInterest() > 0) {
-                System.out.println(accounts[i].toString() + "::fee " + String.format("%.2f", accounts[i].monthlyFee()) + "::monthly interest" + String.format("%.2f", accounts[i].monthlyInterest()));
+                System.out.println(accounts[i].toString() + "::fee $" + String.format("%.2f", accounts[i].monthlyFee())
+                        + "::monthly interest $" + String.format("%.2f", accounts[i].monthlyInterest()));
             }
         }
         System.out.println("*end of list.\n");
