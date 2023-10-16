@@ -172,7 +172,7 @@ public class TransactionManager {
         try {
             balance = Double.parseDouble(inputParts[5]);
             if (balance <= 0) {
-                System.out.println("Withdraw - amount cannot be 0 or negative.");
+                System.out.println("Initial deposit cannot be 0 or negative.");
                 return;
             }
         }
@@ -213,6 +213,7 @@ public class TransactionManager {
             balance = Double.parseDouble(inputParts[5]);
             if (balance <= 0) {
                 System.out.println("Initial deposit cannot be 0 or negative.");
+                return;
             }
             else if (balance < 2000) {
                 System.out.println("Minimum of $2000 to open a Money Market account.");
@@ -331,7 +332,7 @@ public class TransactionManager {
             try {
                 amount = Double.parseDouble(inputParts[5]);
                 if (amount <= 0) {
-                    System.out.println("Withdraw amount must be greater than 0!");
+                    System.out.println("Withdraw - amount cannot be 0 or negative.");
                     return;
                 }
             }
@@ -352,7 +353,6 @@ public class TransactionManager {
                     return;
                 }
             }
-
             if (database.withdraw(account)) System.out.println(String.format(firstName + " " + lastName + " " + dobString + "(" + accountType + ") Withdraw - balance -%.2f.", amount));
             else System.out.println(firstName + " " + lastName + " " + dobString + "(" + accountType + ") is not in the database.");
         } catch (ArrayIndexOutOfBoundsException e) {
